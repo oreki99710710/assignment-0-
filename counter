@@ -1,0 +1,263 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <conio.h>
+
+
+
+float* IntegerOrFraction()
+{
+	float *pb=(float *)malloc(2*sizeof(float));
+	int i,a;
+	for(i=0;i<2;i++)
+	{
+		a=rand()%2+1;
+		if(a==1)
+			pb[i]=(float)(rand()%100+1);
+		else 
+			pb[i]=((rand()%10+1)/10);
+	}
+	return pb;
+}
+void add()
+{
+	float a,b,c;
+	float *pb=IntegerOrFraction();
+	a=pb[0];
+	b=pb[1];
+	printf("%.2f + %.2f=",a,b);
+	scanf("%f",&c);
+	printf("\n");
+	if(c==a+b)
+		printf("正确!\n");
+	else 
+		printf("错误!\n");
+	free(pb);
+}
+
+void minu()
+{
+	float a,b,c;
+	float *pb=IntegerOrFraction();
+	a=pb[0];
+	b=pb[1];
+	if(b>a)
+	{
+		c=b;
+		b=a;
+		a=c;
+	}
+	printf("%.2f - %.2f=",a,b);
+	scanf("%f",&c);
+	printf("\n");
+	if(c==a-b)
+		printf("正确!\n");
+	else 
+		printf("错误!\n");
+	free(pb);
+}
+
+void mul()
+{
+	float a,b,c;
+	float *pb=IntegerOrFraction();
+	a=pb[0];
+	b=pb[1];
+	printf("%.2f * %.2f=",a,b);
+	scanf("%f",&c);
+	printf("\n");
+	if(c==a*b)
+		printf("正确!\n");
+	else 
+		printf("错误!\n");
+	free(pb);
+}
+
+void di()
+{
+	float a,b,c;
+	float *pb=IntegerOrFraction();
+	a=pb[0];
+	b=pb[1];
+	printf("%.2f / %.2f=",a,b);
+	scanf("%f",&c);
+	printf("\n");
+	if(c==a/b)
+		printf("正确!\n");
+	else 
+		printf("错误!\n");
+	free(pb);
+}
+
+int main()
+{
+	int a;
+	char b;
+	
+	while(1)
+	{
+		srand(time(NULL));
+		a=rand()%3;
+		switch(a)
+		{
+		case 0:
+			add();
+			break;
+		case 1:
+			minu();
+			break;
+		case 2:
+			mul();
+			break;
+		case 3:
+			di();
+			break;
+		default:
+			break;
+		}
+		printf("按0退出，其他任意键继续!\n");
+		b=getch();
+		if(b=='0')
+			break;
+		else
+			continue;
+
+	}
+		return 0;
+
+		
+}
+
+-----------
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <conio.h>
+
+
+
+float* IntegerOrFraction()
+{
+	float *pb=(float *)malloc(2*sizeof(float));
+	int i,a;
+	for(i=0;i<2;i++)
+	{
+		a=rand()%2+1;
+		if(a==1)
+			pb[i]=(float)(rand()%100+1);
+		else 
+			pb[i]=(float)(rand()%10+1)/10;
+	}
+	return pb;
+}
+void add()
+{
+	float a,b,c,d;
+	float *pb=IntegerOrFraction();
+	a=pb[0];
+	b=pb[1];
+	printf("%.1f + %.1f=",a,b);
+	scanf("%f",&c);
+	printf("\n");
+	d=a+b;
+	if(c==d)
+		printf("正确!\n");
+	else 
+		printf("错误!\n");
+	free(pb);
+}
+
+void minu()
+{
+	float a,b,c,d;
+	float *pb=IntegerOrFraction();
+	a=pb[0];
+	b=pb[1];
+	if(b>a)
+	{
+		c=b;
+		b=a;
+		a=c;
+	}
+	printf("%.1f - %.1f=",a,b);
+	scanf("%f",&c);
+	printf("\n");
+	d=a-b;
+	if(c==d)
+		printf("正确!\n");
+	else 
+		printf("错误!\n");
+	free(pb);
+}
+
+void mul()
+{
+	float a,b,c;
+	float *pb=IntegerOrFraction();
+	a=pb[0];
+	b=pb[1];
+	printf("%.1f * %.1f=",a,b);
+	scanf("%f",&c);
+	printf("\n");
+	if(c==a*b)
+		printf("正确!\n");
+	else 
+		printf("错误!\n");
+	free(pb);
+}
+
+void di()
+{
+	float a,b,c,d;
+	float *pb=IntegerOrFraction();
+	a=pb[0];
+	b=pb[1];
+	printf("%.1f / %.1f=",a,b);
+	scanf("%f",&c);
+	printf("\n");
+	d=a/b;
+	if(c==d)
+		printf("正确!\n");
+	else 
+		printf("错误! %f\n",d);
+	free(pb);
+}
+
+int main()
+{
+	int a;
+	char b;
+	
+	while(1)
+	{
+		srand(time(NULL));
+		a=3;
+		switch(a)
+		{
+		case 0:
+			add();
+			break;
+		case 1:
+			minu();
+			break;
+		case 2:
+			mul();
+			break;
+		case 3:
+			di();
+			break;
+		default:
+			break;
+		}
+		printf("按0退出，其他任意键继续!\n");
+		b=getch();
+		if(b=='0')
+			break;
+		else
+			continue;
+
+	}
+		return 0;
+
+		
+}
